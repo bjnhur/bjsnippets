@@ -9,6 +9,7 @@ from google.appengine.ext.webapp import util
 from dateutil import *
 from model import *
 
+
 REMINDER = """
 한 주간 수고하셨습니다.
 회신으로 업무내역을 입력해주세요. :)

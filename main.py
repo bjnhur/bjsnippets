@@ -178,7 +178,6 @@ class MainHandler(BaseHandler):
                            }
         self.render('index', template_values)
 
-
 def main():
     application = webapp.WSGIApplication(
                                          [('/', MainHandler),
@@ -189,7 +188,8 @@ def main():
                                           ('/reminderemail', ReminderEmail),
                                           ('/digestemail', DigestEmail),
                                           ('/onereminder', OneReminderEmail),
-                                          ('/onedigest', OneDigestEmail)],
+                                          ('/onedigest', OneDigestEmail)
+                                          ],
                                           debug=True)
     util.run_wsgi_app(application)
 
