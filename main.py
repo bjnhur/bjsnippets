@@ -186,6 +186,7 @@ def main():
                                           ('/follow', FollowHandler),
                                           ('/unfollow', UnfollowHandler),
                                           ('/reminderemail', ReminderEmail),
+                                          ('/emailbutton', ReminderEmailButton),
                                           ('/digestemail', DigestEmail),
                                           ('/onereminder', OneReminderEmail),
                                           ('/onedigest', OneDigestEmail)

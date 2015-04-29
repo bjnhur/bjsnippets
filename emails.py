@@ -21,6 +21,15 @@ REMINDER = """
 - 
 """
 
+class ReminderEmailButton(webapp.RequestHandler):
+	def get(self):
+		self.response.out.write('Now start to send email to team members...')
+		all_users = User.all().filter("enabled =", True).fetch(500)
+		for user in all_users:
+			# TODO: Check if one has already been submitted for this period.
+			taskqueue.add(url='/onereminder', params={'email': user.email})
+		self.response.out.write('Done')
+
 class ReminderEmail(webapp.RequestHandler):
     def get(self):
         all_users = User.all().filter("enabled =", True).fetch(500)
